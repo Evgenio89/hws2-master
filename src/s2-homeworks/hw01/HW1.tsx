@@ -3,7 +3,7 @@ import Message from './message/Message'
 import MessageSender from './message-sender/MessageSender'
 import s2 from '../../s1-main/App.module.css'
 import FriendMessage from './friend-message/FriendMessage'
-import avatar from './avatar.png'
+
 
 /*
 * 1 - описать тип MessageType
@@ -14,14 +14,24 @@ import avatar from './avatar.png'
 * */
 
 // нужно создать правильный тип вместо any
-export type MessageType = any
+export type MessageType = {
+    id: number,
+    user: {
+        avatar: string,
+        name: string
+    },
+    message: {
+        text: string,
+        time: string
+    }
+}
 
 // структуру объекта не менять
 export const message0: MessageType = {
     id: 0,
     user: {
-        avatar: avatar, // можно менять
-        name: 'Some Name',  // можно менять
+        avatar: 'https://static.more.tv/actor/avatar/5feab82564aa7.jpeg', // можно менять
+        name: 'Elon Muck',  // можно менять
     },
     message: {
         text: 'some textsome textsome textsome textsome textsome textsome text', // можно менять
@@ -31,8 +41,8 @@ export const message0: MessageType = {
 export const friendMessage0: MessageType = {
     id: 100,
     user: {
-        avatar: avatar, // можно менять
-        name: 'Friend Name', // можно менять
+        avatar:'https://www.labirint.ru/images/upl/descripts/pic_1478690583.jpg', // можно менять
+        name: 'Donald Trump', // можно менять
     },
     message: {
         text: 'зеркальное сообщение для тренировки css', // можно менять
