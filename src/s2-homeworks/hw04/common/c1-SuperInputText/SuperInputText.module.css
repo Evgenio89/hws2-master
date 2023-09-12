@@ -11,9 +11,12 @@
 }
 
 .errorInput {
+    background-color: #cc0000;
+    color: #cc9c00;
 }
 
 .errorInput:focus {
+    color: #00cc22;
 }
 
 .error {
